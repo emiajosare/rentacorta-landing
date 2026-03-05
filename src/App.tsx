@@ -409,7 +409,7 @@ const VideoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
           {/* Placeholder Video - Replace with your actual video URL */}
           <iframe 
             className="w-full h-full"
-            src="https://youtu.be/f0mAyui2rdc?si=2i5IAaK9F7r-Ipf3" 
+            src="https://www.youtube.com/embed/f0mAyui2rdc?si=iIEbCOx1uL79dbe7" 
             title="RentaCortaElit Demo"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
