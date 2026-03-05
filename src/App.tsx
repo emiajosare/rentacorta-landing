@@ -248,7 +248,7 @@ const LeadForm = () => {
               </div>
               <h2 className="text-4xl font-serif font-bold mb-6">Únase a la Membresía "Anfitrión"</h2>
               <p className="text-white-soft/60 mb-10 text-sm font-light">
-                Pruebe el poder de la IA sin costo por 90 días. Después, solo <span className="text-gold font-bold">US$27.00/mes</span> para mantener su propiedad en la elite.
+                Pruebe el poder de la IA sin costo por 60 días. Después, solo <span className="text-gold font-bold">US$27.00/mes</span> para mantener su propiedad en la elite.
               </p>
               <form onSubmit={handleSubmit} className="space-y-4 text-left">
                 <input 
@@ -409,7 +409,7 @@ const VideoModal = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void 
           {/* Placeholder Video - Replace with your actual video URL */}
           <iframe 
             className="w-full h-full"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1" 
+            src="https://youtu.be/f0mAyui2rdc?si=2i5IAaK9F7r-Ipf3" 
             title="RentaCortaElit Demo"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
