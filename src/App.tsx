@@ -244,7 +244,7 @@ const LeadForm = () => {
           {!submitted ? (
             <>
               <div className="inline-block px-4 py-1 rounded-full bg-gold/10 text-gold text-[10px] font-black mb-6 uppercase tracking-widest border border-gold/20">
-                Oferta de Lanzamiento: 3 Meses Gratis
+                Oferta de Lanzamiento: 2 Meses Gratis
               </div>
               <h2 className="text-4xl font-serif font-bold mb-6">Únase a la Membresía "Anfitrión"</h2>
               <p className="text-white-soft/60 mb-10 text-sm font-light">
@@ -277,7 +277,7 @@ const LeadForm = () => {
             <div className="py-10">
               <CheckCircle2 className="text-gold w-16 h-16 mx-auto mb-6" />
               <h3 className="text-3xl font-serif font-bold mb-4">¡Bienvenido, Anfitrión!</h3>
-              <p className="text-white-soft/60">Hemos recibido su solicitud. Pronto recibirá un correo para configurar sus 3 meses de membresía gratuita con RentaCortaElit.</p>
+              <p className="text-white-soft/60">Hemos recibido su solicitud. Pronto recibirá un correo para configurar sus 2 meses de membresía gratuita con RentaCortaElit.</p>
             </div>
           )}
         </div>
@@ -357,7 +357,7 @@ const Authority = () => (
           </div>
           <div className="mt-10 p-6 rounded-2xl bg-gold/5 border border-gold/20 text-center">
             <p className="text-sm font-bold text-gold uppercase tracking-tight">
-              Así duplicarás tus calificaciones e ingresos en los siguientes 3 meses
+              Así duplicarás tus calificaciones e ingresos en los siguientes 2 meses
             </p>
           </div>
         </div>
