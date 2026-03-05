@@ -269,7 +269,7 @@ const LeadForm = () => {
                   disabled={isSubmitting}
                   className="w-full py-5 bg-gradient-to-r from-gold-dark to-gold rounded-sm font-bold text-xl text-black hover:scale-[1.02] transition-all shadow-lg shadow-gold/20"
                 >
-                  {isSubmitting ? 'Procesando...' : 'Iniciar 3 Meses Gratis'}
+                  {isSubmitting ? 'Procesando...' : 'Iniciar 2 Meses Gratis'}
                 </button>
               </form>
             </>
