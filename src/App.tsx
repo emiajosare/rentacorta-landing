@@ -252,7 +252,7 @@ const LeadForm = () => {
               </p>
               <form onSubmit={handleSubmit} className="space-y-4 text-left">
                 <input 
-                  type="email" placeholder="Email profesional" required value={email}
+                  type="email" placeholder="Email ....." required value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full px-8 py-5 rounded-sm bg-luxury-bg border border-white-soft/10 focus:border-gold outline-none text-lg transition-all"
                 />
