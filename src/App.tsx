@@ -16,7 +16,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 
 // 🟢 EL PUENTE MÁGICO AL SAAS
-const SAAS_APP_URL = "https://renta-corta.vercel.app?action=signup";
+const SAAS_APP_URL = "https://app.hostflowpro.com?action=signup";
 
 // --- COMPONENTES DE APOYO ---
 
