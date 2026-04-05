@@ -16,7 +16,7 @@ import {
 import { motion, AnimatePresence } from 'framer-motion';
 
 // 🟢 EL PUENTE MÁGICO AL SAAS
-const SAAS_APP_URL = "https://app.hostflowpro.com?action=signup";
+const SAAS_APP_URL = "http://localhost:5173?action=signup";
 
 // --- COMPONENTES DE APOYO ---
 
