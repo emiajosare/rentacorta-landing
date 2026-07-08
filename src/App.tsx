@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { 
   Sparkles,
   Clock,
@@ -20,9 +20,10 @@ import {
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
+
 // 🟢 EL PUENTE MÁGICO AL SAAS
-//const SAAS_APP_URL = "http://localhost:5173?action=signup";
-const SAAS_APP_URL = "http://app.hostflowpro.com?action=signup";
+
+const SAAS_APP_URL = import.meta.env.VITE_SAAS_URL || "http://localhost:5173";
 
 // --- COMPONENTES DE APOYO ---
 
@@ -57,140 +58,6 @@ const Logo: React.FC<LogoProps> = ({
   );
 };
 
-const AuthModal = ({ isOpen, onClose, onLoginSuccess }: { isOpen: boolean; onClose: () => void; onLoginSuccess: () => void }) => {
-  const [isLogin, setIsLogin] = useState(false); // Por defecto abrimos en Registro por la estrategia de cupos
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
-  const [loading, setLoading] = useState(false);
-  const [message, setMessage] = useState<{ type: 'success' | 'error', text: string } | null>(null);
-
-  const handleAuth = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setMessage(null);
-
-    try {
-      // Simulación de delay (Modo Demo)
-      await new Promise(resolve => setTimeout(resolve, 1500));
-
-      if (isLogin) {
-        setMessage({ type: 'success', text: '¡Sesión iniciada! Redirigiendo a tu panel...' });
-        setTimeout(() => {
-          onLoginSuccess();
-          onClose();
-        }, 1500);
-      } else {
-        setMessage({ type: 'success', text: '¡Cupo reclamado con éxito! Redirigiendo al panel...' });
-        setTimeout(() => {
-          onLoginSuccess();
-          onClose();
-        }, 2000);
-      }
-    } catch (error: any) {
-      setMessage({ type: 'error', text: 'Error al conectar.' });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <AnimatePresence>
-      {isOpen && (
-        <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-black/90 backdrop-blur-md"
-          onClick={onClose}
-        >
-          <motion.div 
-            initial={{ scale: 0.95, y: 20 }}
-            animate={{ scale: 1, y: 0 }}
-            exit={{ scale: 0.95, y: 20 }}
-            className="relative w-full max-w-md p-8 rounded-[2.5rem] bg-[#111] border border-gold/30 shadow-[0_0_50px_rgba(201,168,76,0.15)]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <button onClick={onClose} className="absolute top-6 right-6 text-white/40 hover:text-white transition-colors">
-              <XCircle className="w-6 h-6" />
-            </button>
-
-            <div className="text-center mb-8">
-              {/* Logo en el modal */}
-              <Logo 
-                showText={false} 
-                imageClass="w-16 h-16 mx-auto mb-4" 
-                containerClass="flex justify-center"
-              />
-             <h2 className="text-2xl font-bold mb-2 text-white">
-                {isLogin ? 'Accede a tu cuenta' : 'Reclama tu Cupo Fundador'}
-              </h2>
-              <p className="text-sm text-white/50">
-                {isLogin
-                  ? 'Gestiona tus propiedades.'
-                  : 'Acceso temprano para los primeros 20 usuarios que quieran implementar HostFlow en un inmueble real.'}
-              </p>
-            </div>
-
-            <form onSubmit={handleAuth} className="space-y-4 text-left">
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Email</label>
-                <div className="relative">
-                  <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                  <input 
-                    type="email" 
-                    required
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="ejemplo@hostflow.com"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-sm text-white focus:border-gold/50 focus:outline-none transition-all"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <label className="text-xs font-bold text-white/40 uppercase tracking-widest ml-1">Contraseña</label>
-                <div className="relative">
-                  <Key className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" />
-                  <input 
-                    type="password" 
-                    required
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="••••••••"
-                    className="w-full bg-white/5 border border-white/10 rounded-2xl py-4 pl-12 pr-4 text-sm text-white focus:border-gold/50 focus:outline-none transition-all"
-                  />
-                </div>
-              </div>
-
-              {message && (
-                <div className={`p-4 rounded-xl text-xs font-medium ${message.type === 'success' ? 'bg-green-500/10 text-green-400 border border-green-500/20' : 'bg-red-500/10 text-red-400 border border-red-500/20'}`}>
-                  {message.text}
-                </div>
-              )}
-
-              <button 
-                type="submit" 
-                disabled={loading}
-                className="w-full py-4 bg-gold text-black font-black rounded-full hover:bg-gold-light transition-all flex items-center justify-center gap-2 shadow-[0_10px_20px_rgba(201,168,76,0.15)] disabled:opacity-50"
-              >
-                {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : (isLogin ? 'Entrar al Panel' : 'Asegurar mi cuenta fundador')}
-              </button>
-            </form>
-
-            <div className="mt-8 text-center">
-              <button 
-                onClick={() => setIsLogin(!isLogin)}
-                className="text-xs text-white/40 hover:text-gold transition-colors font-medium"
-              >
-                {isLogin ? '¿No tienes cuenta? Reclama tu cupo fundador' : '¿Ya tienes cuenta? Inicia sesión'}
-              </button>
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  );
-};
 
 const Navbar = ({ onAuthClick, user }: { onAuthClick: () => void; user: any }) => (
   <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 md:px-12 py-5 bg-black/80 backdrop-blur-xl border-b border-white/10">
@@ -209,7 +76,7 @@ const Navbar = ({ onAuthClick, user }: { onAuthClick: () => void; user: any }) =
   </nav>
 );
 
-const Hero = ({ onAuthClick, user }: { onAuthClick: () => void; user: any }) => (
+const Hero = ({ toggleAuth, user }: { toggleAuth: () => void; user: any }) => (
   <section id="problema" className="relative pt-32 pb-20 px-6 overflow-hidden min-h-[92vh] flex flex-col justify-center">
     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full max-w-6xl -z-10 opacity-20">
       <div className="absolute top-0 left-1/4 w-96 h-96 bg-gold/30 rounded-full blur-[120px]" />
@@ -254,7 +121,7 @@ const Hero = ({ onAuthClick, user }: { onAuthClick: () => void; user: any }) => 
           className="flex flex-col sm:flex-row items-start sm:items-center gap-4"
         >
           <button
-            onClick={onAuthClick}
+            onClick={toggleAuth}
             className="w-full sm:w-auto px-10 py-5 bg-gold text-black font-black rounded-full flex items-center justify-center gap-2 hover:bg-gold-light transition-all group shadow-[0_0_30px_rgba(201,168,76,0.3)]"
           >
             {user ? 'Ir a mi Panel' : 'Reclamar cupo fundador'}
@@ -375,7 +242,7 @@ const ExploreSection = () => (
   </section>
 );
 
-const Pricing = ({ onAuthClick }: { onAuthClick: () => void }) => (
+const Pricing = ({ onPlanSelect }: { onPlanSelect: (planId: string) => void }) => (
   <section id="precios" className="py-24 px-6 bg-white/[0.02]">
     <div className="max-w-6xl mx-auto">
       <div className="text-center mb-16">
@@ -425,7 +292,7 @@ const Pricing = ({ onAuthClick }: { onAuthClick: () => void }) => (
           </ul>
 
           <button
-            onClick={onAuthClick}
+            onClick={() => onPlanSelect('fundador')} // 👈 Enviamos el ID del plan
             className="w-full py-4 bg-gold text-black rounded-full font-bold transition-all hover:bg-gold-light"
           >
             Reclamar cupo fundador
@@ -484,28 +351,23 @@ const Pricing = ({ onAuthClick }: { onAuthClick: () => void }) => (
 );
 
 export default function App() {
-  const [showAuth, setShowAuth] = useState(false);
-  const [user, setUser] = useState<any>(null);
 
-  // 🟢 MAGIA AQUÍ: En lugar de abrir el modal falso, viajamos a la App SaaS real
-  const toggleAuth = () => {
-    window.location.href = SAAS_APP_URL;
+  const handlePlanSelection = (planId: string = 'fundador') => {
+    const finalUrl = `${SAAS_APP_URL}/?action=signup&plan=${planId}`;
+    window.location.href = finalUrl;
   };
 
-  const handleDemoLogin = () => {
-    setUser({ email: "fundador@hostflow.com" });
-  };
+  const toggleAuth = () => handlePlanSelection('fundador');
 
   return (
     <div className="min-h-screen bg-[#080808] text-white selection:bg-gold selection:text-black font-sans scroll-smooth">
-      <Navbar onAuthClick={toggleAuth} user={user} />
+      <Navbar onAuthClick={toggleAuth} user={null} />
       
       <main>
-        <Hero onAuthClick={toggleAuth} user={user} />
+        <Hero toggleAuth={toggleAuth} user={null} />
         <HowItWorks />
 
         <section id="solucion" className="py-24 px-6">
-          {/* sección reemplazada por el nuevo bloque */}
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
@@ -548,26 +410,10 @@ export default function App() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {[
-                {
-                  icon: <MessageSquareMore className="w-5 h-5" />,
-                  title: "Menos mensajes repetitivos",
-                  desc: "Evita responder una y otra vez dónde entrar, cómo conectarse al WiFi o cuáles son las reglas.",
-                },
-                {
-                  icon: <ClipboardCheck className="w-5 h-5" />,
-                  title: "Llegadas más claras",
-                  desc: "Tus huéspedes reciben instrucciones organizadas y fáciles de seguir desde el móvil.",
-                },
-                {
-                  icon: <Home className="w-5 h-5" />,
-                  title: "Operación más profesional",
-                  desc: "Tu propiedad se siente mejor gestionada con información centralizada y fácil de compartir.",
-                },
-                {
-                  icon: <Star className="w-5 h-5" />,
-                  title: "Mejor experiencia para el huésped",
-                  desc: "Desde el acceso hasta la información útil de la estancia, todo se presenta de forma más cuidada.",
-                },
+                { icon: <MessageSquareMore className="w-5 h-5" />, title: "Menos mensajes repetitivos", desc: "Evita responder una y otra vez dónde entrar, cómo conectarse al WiFi o cuáles son las reglas." },
+                { icon: <ClipboardCheck className="w-5 h-5" />, title: "Llegadas más claras", desc: "Tus huéspedes reciben instrucciones organizadas y fáciles de seguir desde el móvil." },
+                { icon: <Home className="w-5 h-5" />, title: "Operación más profesional", desc: "Tu propiedad se siente mejor gestionada con información centralizada y fácil de compartir." },
+                { icon: <Star className="w-5 h-5" />, title: "Mejor experiencia para el huésped", desc: "Desde el acceso hasta la información útil de la estancia, todo se presenta de forma más cuidada." },
               ].map((item, i) => (
                 <div key={i} className="p-8 rounded-[2rem] bg-white/5 border border-white/10 hover:border-gold/30 transition-colors">
                   <div className="text-gold mb-4">{item.icon}</div>
@@ -580,28 +426,15 @@ export default function App() {
         </section>
 
         <ExploreSection />
-        <Pricing onAuthClick={toggleAuth} />
+        <Pricing onPlanSelect={handlePlanSelection} />
 
         <section className="py-32 px-6 text-center">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            className="max-w-4xl mx-auto p-12 md:p-24 rounded-[4rem] bg-gradient-to-tr from-gold/20 to-transparent border border-white/10 relative overflow-hidden"
+          <button 
+            onClick={toggleAuth}
+            className="px-12 py-6 bg-gold text-black font-black text-xl rounded-full hover:bg-gold-light hover:scale-105 transition-all shadow-[0_20px_40px_rgba(201,168,76,0.2)]"
           >
-            <div className="absolute -top-24 -right-24 w-64 h-64 bg-gold/10 rounded-full blur-[100px]" />
-            <h2 className="text-4xl md:text-6xl font-bold mb-8 relative z-10 text-white">
-              Empieza con tu primera propiedad
-            </h2>
-            <p className="text-white/60 mb-10 text-lg relative z-10 max-w-2xl mx-auto">
-              Reclama tu cupo fundador y genera tu primer acceso para huésped desde una experiencia clara y profesional.
-            </p>
-            <button 
-              onClick={toggleAuth}
-              className="px-12 py-6 bg-gold text-black font-black text-xl rounded-full hover:bg-gold-light hover:scale-105 transition-all shadow-[0_20px_40px_rgba(201,168,76,0.2)]"
-            >
-              {user ? 'IR A MI PANEL' : 'RECLAMAR CUPO FUNDADOR'}
-            </button>
-          </motion.div>
+            RECLAMAR CUPO FUNDADOR
+          </button>
         </section>
       </main>
 
@@ -611,13 +444,6 @@ export default function App() {
         </div>
         <p className="text-xs tracking-widest uppercase font-bold">&copy; 2025 HostFlow • El estándar de oro en gestión de rentas</p>
       </footer>
-      
-      {/* El modal original sigue aquí por si algún día quieres reactivarlo, pero ahora los botones te llevan directo al SaaS */}
-      <AuthModal 
-        isOpen={showAuth} 
-        onClose={() => setShowAuth(false)} 
-        onLoginSuccess={handleDemoLogin} 
-      />
     </div>
   );
 }
