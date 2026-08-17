@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HostFlow — Deja de repetir las mismas instrucciones a tus huéspedes</title>
+<meta name="description" content="HostFlow centraliza check-in, WiFi, reglas y guías de tu alquiler vacacional en un solo enlace para tus huéspedes. Nacido de una experiencia real como huésped y anfitrión en Santa Marta, Colombia.">
+<meta property="og:title" content="HostFlow — La experiencia de tus huéspedes, en un solo enlace">
+<meta property="og:description" content="Automatiza check-in, WiFi, reglas y guías de tu renta corta. Menos llamadas, huéspedes más tranquilos.">
+<meta property="og:image" content="images/og-image.png">
+<meta property="og:type" content="website">
+<link rel="icon" href="images/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-logo">
+    <img src="images/logo.png" alt="HostFlow">
+    <span>Host<b>Flow</b></span>
+  </div>
+  <div class="nav-actions">
+    <div class="lang-toggle">
+      <button id="lang-es">ES</button>
+      <button id="lang-en">EN</button>
+    </div>
+    <a class="btn btn-ghost" href="https://app.hostflowpro.com/?action=signup&plan=fundador" data-es>Reclamar cupo</a>
+    <a class="btn btn-ghost" href="https://app.hostflowpro.com/?action=signup&plan=fundador" data-en>Claim your spot</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-glow"></div>
+  <div class="hero-inner">
+    <div class="badge" data-es>
+      <span>🔥</span> Cupos fundador limitados a los primeros 20 anfitriones
+    </div>
+    <div class="badge" data-en>
+      <span>🔥</span> Founder spots limited to the first 20 hosts
+    </div>
+
+    <h1 data-es>Deja de responder las mismas preguntas <span class="serif-italic">todos los días.</span></h1>
+    <h1 data-en>Stop answering the same questions <span class="serif-italic">every single day.</span></h1>
+
+    <p class="lead" data-es>HostFlow centraliza el check-in, el WiFi, las reglas y las guías de tu alquiler vacacional en un solo enlace: claro, profesional y desde el celular de tu huésped.</p>
+    <p class="lead" data-en>HostFlow centralizes check-in, WiFi, house rules and guides for your short-term rental into one link: clear, professional, and right on your guest's phone.</p>
+
+    <div class="hero-actions">
+      <a class="btn btn-primary btn-lg" href="#precios" data-es>Reclamar cupo fundador</a>
+      <a class="btn btn-primary btn-lg" href="#precios" data-en>Claim founder spot</a>
+      <a class="btn btn-outline btn-lg" href="#como-funciona" data-es>Ver cómo funciona</a>
+      <a class="btn btn-outline btn-lg" href="#como-funciona" data-en>See how it works</a>
+    </div>
+    <p class="hero-note" data-es>Para anfitriones y operadores con 1 o más inmuebles · Santa Marta, Colombia</p>
+    <p class="hero-note" data-en>For hosts and operators with 1 or more properties · Santa Marta, Colombia</p>
+  </div>
+</header>
+
+<!-- HISTORIA -->
+<section id="historia">
+  <div class="container story">
+    <div class="story-text reveal">
+      <p class="eyebrow" data-es>Por qué existe HostFlow</p>
+      <p class="eyebrow" data-en>Why HostFlow exists</p>
+      <h2 data-es>Nació de una frustración real, no de una idea de oficina.</h2>
+      <h2 data-en>Born from a real frustration, not a boardroom idea.</h2>
+
+      <div data-es>
+        <p>Antes de construir HostFlow, viví el problema como <strong>huésped</strong>. Cada vez que llegaba a un alojamiento de renta corta, terminaba llamando o escribiéndole al anfitrión por WhatsApp para preguntas simples: cómo se prendía el televisor, cómo funcionaba el aire acondicionado, cómo se usaba la lavadora, cuál era la clave del WiFi. Algunos apartamentos tenían instrucciones en papel, pero muchas veces estaban desactualizadas.</p>
+        <p>Eso generaba una frustración real, para el huésped y para el anfitrión. Cuando mi hijo empezó a rentar su propio apartamento en Santa Marta, decidí que a él no le iba a pasar lo mismo. Con base en sus necesidades reales, construí HostFlow: un enlace único que reúne todo lo que un huésped necesita saber durante su estancia.</p>
+      </div>
+      <div data-en>
+        <p>Before building HostFlow, I lived the problem as a <strong>guest</strong>. Every time I checked into a short-term rental, I ended up calling or texting the host on WhatsApp over simple questions: how to turn on the TV, how the AC worked, how to use the washing machine, what the WiFi password was. Some apartments had paper instructions, but they were often outdated.</p>
+        <p>That created real frustration, for the guest and for the host. When my son started renting out his own apartment in Santa Marta, I decided he wouldn't go through the same thing. Based on his real needs, I built HostFlow: a single link that brings together everything a guest needs during their stay.</p>
+      </div>
+
+      <div class="story-result">
+        <div class="num" data-es>Menos llamadas, huéspedes más tranquilos</div>
+        <div class="num" data-en>Fewer calls, calmer guests</div>
+        <p data-es style="margin:8px 0 0;color:var(--text-dim);font-size:.92rem;">Desde que el apartamento de mi hijo empezó a usar HostFlow, las interacciones telefónicas y por mensajes con los huéspedes se redujeron de forma significativa.</p>
+        <p data-en style="margin:8px 0 0;color:var(--text-dim);font-size:.92rem;">Since my son's apartment started using HostFlow, phone calls and messages with guests dropped significantly.</p>
+      </div>
+
+      <div class="story-avatar">
+        <div class="dot">JE</div>
+        <div class="who">
+          <b>Jaime Eraso</b>
+          <span data-es>Fundador de HostFlow · Anfitrión en Santa Marta</span>
+          <span data-en>Founder of HostFlow · Host in Santa Marta</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="story-visual reveal">
+      <img src="images/guest-preview.png" alt="Vista del huésped en HostFlow">
+    </div>
+  </div>
+</section>
+
+<!-- COMO FUNCIONA -->
+<section id="como-funciona" class="section-soft">
+  <div class="container">
+    <div class="center" style="max-width:680px;">
+      <p class="eyebrow" data-es>El proceso</p>
+      <p class="eyebrow" data-en>The process</p>
+      <h2 data-es>Así funciona HostFlow</h2>
+      <h2 data-en>How HostFlow works</h2>
+      <p class="section-lead center" data-es>Tres pasos entre configurar tu inmueble y que tu huésped tenga todo lo que necesita en su celular.</p>
+      <p class="section-lead center" data-en>Three steps between setting up your property and your guest having everything they need on their phone.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step-card reveal">
+        <img src="images/step-admin.png" alt="Configura tu inmueble">
+        <div class="step-body">
+          <div class="step-num">1</div>
+          <h3 data-es>Configura tu inmueble</h3>
+          <h3 data-en>Set up your property</h3>
+          <p data-es>Nombre, dirección, capacidad, habitaciones y baños. Agrega el WiFi, las reglas de la casa y los manuales de cada electrodoméstico que quieras dejar documentados.</p>
+          <p data-en>Name, address, capacity, bedrooms and bathrooms. Add your WiFi, house rules and manuals for every appliance you want documented.</p>
+        </div>
+      </div>
+
+      <div class="step-card reveal">
+        <img src="images/step-checkin.png" alt="Genera el check-in">
+        <div class="step-body">
+          <div class="step-num">2</div>
+          <h3 data-es>Genera el check-in</h3>
+          <h3 data-en>Generate the check-in</h3>
+          <p data-es>Registra al huésped, sus fechas de estancia y un código de puerta. HostFlow genera un enlace único que le entregas al confirmar su reserva.</p>
+          <p data-en>Register the guest, their stay dates and a door code. HostFlow generates a unique link you hand over once the booking is confirmed.</p>
+        </div>
+      </div>
+
+      <div class="step-card reveal">
+        <img src="images/step-guest.png" alt="El huésped accede desde su celular">
+        <div class="step-body">
+          <div class="step-num">3</div>
+          <h3 data-es>Comparte la experiencia</h3>
+          <h3 data-en>Share the experience</h3>
+          <p data-es>Tu huésped abre el enlace desde el celular y encuentra su llave digital, el WiFi, las reglas, las guías, recomendaciones cercanas y un botón directo de WhatsApp.</p>
+          <p data-en>Your guest opens the link on their phone and finds their digital key, WiFi, house rules, guides, nearby recommendations and a direct WhatsApp button.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FUNCIONALIDADES -->
+<section id="funcionalidades">
+  <div class="container">
+    <div class="center" style="max-width:680px;">
+      <p class="eyebrow" data-es>Todo en un solo lugar</p>
+      <p class="eyebrow" data-en>Everything in one place</p>
+      <h2 data-es>Lo que incluye HostFlow hoy</h2>
+      <h2 data-en>What HostFlow includes today</h2>
+    </div>
+
+    <div class="features-grid">
+      <div class="feature-card reveal">
+        <div class="feature-icon">🔑</div>
+        <h3 data-es>Check-in digital</h3>
+        <h3 data-en>Digital check-in</h3>
+        <p data-es>Código de puerta y llave digital que se activan con la reserva del huésped.</p>
+        <p data-en>Door code and digital key activated by the guest's booking.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📶</div>
+        <h3 data-es>WiFi al instante</h3>
+        <h3 data-en>Instant WiFi</h3>
+        <p data-es>Red y contraseña visibles apenas el huésped entra, sin tener que preguntar.</p>
+        <p data-en>Network and password visible the moment the guest logs in, no need to ask.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📋</div>
+        <h3 data-es>Reglas y manuales</h3>
+        <h3 data-en>Rules & manuals</h3>
+        <p data-es>Instrucciones claras de cada electrodoméstico y las normas de convivencia del inmueble.</p>
+        <p data-en>Clear instructions for every appliance and the property's house rules.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📍</div>
+        <h3 data-es>Explora cerca de ti</h3>
+        <h3 data-en>Explore nearby</h3>
+        <p data-es>Recomendaciones de restaurantes, naturaleza y atracciones alrededor del inmueble.</p>
+        <p data-en>Restaurant, nature and attraction recommendations around the property.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">💬</div>
+        <h3 data-es>Contacto directo</h3>
+        <h3 data-en>Direct contact</h3>
+        <p data-es>Botón de WhatsApp para casos de extrema necesidad, sin exponer tu chat personal.</p>
+        <p data-en>A WhatsApp button for real emergencies, without exposing your personal chat.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🌐</div>
+        <h3 data-es>Interfaz bilingüe</h3>
+        <h3 data-en>Bilingual interface</h3>
+        <p data-es>Panel del huésped en español e inglés, ideal para viajeros internacionales.</p>
+        <p data-en>Guest panel in Spanish and English, ideal for international travelers.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">🚪</div>
+        <h3 data-es>Instrucciones de salida</h3>
+        <h3 data-en>Checkout instructions</h3>
+        <p data-es>Un recordatorio claro de lo que hay que hacer antes de dejar el inmueble.</p>
+        <p data-en>A clear reminder of everything to do before leaving the property.</p>
+      </div>
+      <div class="feature-card reveal">
+        <div class="feature-icon">📥</div>
+        <h3 data-es>Historial administrativo</h3>
+        <h3 data-en>Admin history</h3>
+        <p data-es>Descarga el historial de check-ins de tu inmueble cuando lo necesites.</p>
+        <p data-en>Download your property's check-in history whenever you need it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CASO REAL -->
+<section id="caso-real" class="section-soft">
+  <div class="container">
+    <div class="case reveal">
+      <div class="case-visuals">
+        <img src="images/admin-preview.png" alt="Panel de Delvento Suits en HostFlow">
+      </div>
+      <div class="case-body">
+        <span class="case-tag" data-es>Caso real</span>
+        <span class="case-tag" data-en>Real case</span>
+        <h3>Delvento Suits</h3>
+        <p class="addr">Carrera 4C No. 70-75, Pozos Colorados · Santa Marta, Colombia</p>
+        <p data-es>El primer inmueble en usar HostFlow en producción. Su anfitrión configuró reglas, WiFi, manuales y recomendaciones cercanas, y cada huésped recibe su propio enlace de check-in con código de puerta.</p>
+        <p data-en>The first property to run HostFlow in production. Its host configured house rules, WiFi, manuals and nearby recommendations, and every guest gets their own check-in link with a door code.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIO -->
+<section id="testimonio">
+  <div class="container">
+    <div class="testimonial reveal">
+      <blockquote data-es>“El código de acceso y las instrucciones del apartamento no se entregan hasta que el huésped completa su registro digital. Se conectó al WiFi escaneando el código QR y consultó los manuales desde su teléfono — no tuve que responder ni un solo mensaje durante toda la estadía. Al día siguiente del check-out ya tenía mi calificación de 5 estrellas.”</blockquote>
+      <blockquote data-en>“The access code and apartment instructions aren't released until the guest completes their digital registration. My guest connected to the WiFi by scanning the QR code and checked the manuals right from their phone — I didn't have to answer a single message during the entire stay. The day after checkout, I already had my 5-star rating.”</blockquote>
+      <div class="who">
+        <div class="dot" style="width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--gold),#7a6323);display:flex;align-items:center;justify-content:center;color:#000;font-weight:800;font-size:18px;">★</div>
+        <div>
+          <b style="display:block;font-size:14px;" data-es>Anfitrión, Delvento Suits</b>
+          <b style="display:block;font-size:14px;" data-en>Host, Delvento Suits</b>
+          <span style="font-size:12.5px;color:var(--text-dimmer);" data-es>Santa Marta, Colombia · 5★ tras su primer check-out con HostFlow</span>
+          <span style="font-size:12.5px;color:var(--text-dimmer);" data-en>Santa Marta, Colombia · 5★ after their first HostFlow checkout</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRECIOS -->
+<section id="precios" class="section-soft">
+  <div class="container">
+    <div class="center" style="max-width:680px;">
+      <p class="eyebrow" data-es>Precios</p>
+      <p class="eyebrow" data-en>Pricing</p>
+      <h2 data-es>Planes diseñados para crecer</h2>
+      <h2 data-en>Plans designed to grow</h2>
+      <p class="section-lead center" data-es>Estamos abriendo un grupo pequeño de cuentas fundadoras para implementar HostFlow con inmuebles reales. Precios en dólares americanos (USD).</p>
+      <p class="section-lead center" data-en>We're opening a small group of founder accounts to roll out HostFlow with real properties. Prices in US dollars (USD).</p>
+    </div>
+
+    <div class="pricing-grid">
+      <div class="price-card featured reveal">
+        <span class="price-tag" data-es>Cupos fundador limitados</span>
+        <span class="price-tag" data-en>Founder spots limited</span>
+        <h3>Fundador</h3>
+        <p class="sub" data-es>Para los primeros 20 anfitriones que implementen HostFlow con una propiedad real.</p>
+        <p class="sub" data-en>For the first 20 hosts implementing HostFlow with a real property.</p>
+        <div class="price-amount"><span class="num">$7</span><span class="per" data-es>/ mes</span><span class="per" data-en>/ month</span></div>
+        <ul class="price-list">
+          <li data-es>✓ 1 propiedad incluida</li><li data-en>✓ 1 property included</li>
+          <li data-es>✓ Check-in digital</li><li data-en>✓ Digital check-in</li>
+          <li data-es>✓ WiFi, reglas y manuales</li><li data-en>✓ WiFi, rules & manuals</li>
+          <li data-es>✓ Acceso temprano a mejoras</li><li data-en>✓ Early access to new features</li>
+        </ul>
+        <a class="btn btn-primary" href="https://app.hostflowpro.com/?action=signup&plan=fundador" data-es>Reclamar cupo fundador</a>
+        <a class="btn btn-primary" href="https://app.hostflowpro.com/?action=signup&plan=fundador" data-en>Claim founder spot</a>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Pro</h3>
+        <p class="sub" data-es>Para anfitriones con varias propiedades.</p>
+        <p class="sub" data-en>For hosts with several properties.</p>
+        <div class="price-amount"><span class="num">$24</span><span class="per" data-es>/ mes</span><span class="per" data-en>/ month</span></div>
+        <ul class="price-list">
+          <li data-es>✓ Hasta 5 propiedades</li><li data-en>✓ Up to 5 properties</li>
+          <li data-es>✓ Personalización por inmueble</li><li data-en>✓ Per-property customization</li>
+          <li data-es>✓ Soporte prioritario</li><li data-en>✓ Priority support</li>
+        </ul>
+        <span class="btn btn-outline" style="cursor:not-allowed;opacity:.6;" data-es>Próximamente</span>
+        <span class="btn btn-outline" style="cursor:not-allowed;opacity:.6;" data-en>Coming soon</span>
+      </div>
+
+      <div class="price-card reveal">
+        <h3>Business</h3>
+        <p class="sub" data-es>Para operadores y equipos en crecimiento.</p>
+        <p class="sub" data-en>For growing operators and teams.</p>
+        <div class="price-amount"><span class="num">$49</span><span class="per" data-es>/ mes</span><span class="per" data-en>/ month</span></div>
+        <ul class="price-list">
+          <li data-es>✓ Más de 10 propiedades</li><li data-en>✓ 10+ properties</li>
+          <li data-es>✓ Analítica avanzada</li><li data-en>✓ Advanced analytics</li>
+          <li data-es>✓ Gestión más robusta</li><li data-en>✓ More robust management</li>
+        </ul>
+        <span class="btn btn-outline" style="cursor:not-allowed;opacity:.6;" data-es>Próximamente</span>
+        <span class="btn btn-outline" style="cursor:not-allowed;opacity:.6;" data-en>Coming soon</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <h2 data-es>¿Listo para dejar de repetir las mismas instrucciones?</h2>
+  <h2 data-en>Ready to stop repeating the same instructions?</h2>
+  <a class="btn btn-primary btn-lg" href="https://app.hostflowpro.com/?action=signup&plan=fundador" data-es>Reclamar cupo fundador</a>
+  <a class="btn btn-primary btn-lg" href="https://app.hostflowpro.com/?action=signup&plan=fundador" data-en>Claim founder spot</a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-col">
+      <div class="nav-logo" style="margin-bottom:14px;">
+        <img src="images/logo.png" alt="HostFlow" style="width:32px;height:32px;">
+        <span>Host<b style="color:var(--gold);">Flow</b></span>
+      </div>
+      <p data-es>El estándar de oro en gestión de rentas cortas. Construido en Santa Marta, Colombia.</p>
+      <p data-en>The gold standard in short-term rental management. Built in Santa Marta, Colombia.</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-es>Contacto</h4>
+      <h4 data-en>Contact</h4>
+      <a href="https://wa.me/16479075246" target="_blank" rel="noopener">WhatsApp Business</a>
+      <a href="mailto:soporte@hostflowpro.com">soporte@hostflowpro.com</a>
+      <p data-es style="opacity:.6;">Redes sociales: próximamente</p>
+      <p data-en style="opacity:.6;">Social media: coming soon</p>
+    </div>
+    <div class="footer-col">
+      <h4 data-es>Legal</h4>
+      <h4 data-en>Legal</h4>
+      <a href="terms.html" data-es>Términos y Condiciones</a>
+      <a href="terms.html" data-en>Terms & Conditions</a>
+      <a href="privacy.html" data-es>Política de Privacidad</a>
+      <a href="privacy.html" data-en>Privacy Policy</a>
+      <a href="https://app.hostflowpro.com" target="_blank" rel="noopener" data-es>Ir a mi panel</a>
+      <a href="https://app.hostflowpro.com" target="_blank" rel="noopener" data-en>Go to my dashboard</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>&copy; 2026 HostFlow</span>
+    <span data-es>Hecho con dedicación en Santa Marta, Colombia</span>
+    <span data-en>Made with care in Santa Marta, Colombia</span>
+  </div>
+</footer>
+
+<a class="whatsapp-fab" href="https://wa.me/16479075246" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="#fff"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.87 9.87 0 004.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91C21.96 6.45 17.5 2 12.04 2zm5.79 14.1c-.24.68-1.4 1.32-1.93 1.4-.5.08-1.12.11-1.8-.11-.42-.13-.95-.31-1.64-.6-2.89-1.25-4.78-4.16-4.92-4.35-.14-.19-1.18-1.57-1.18-3 0-1.43.75-2.13 1.02-2.42.27-.29.58-.36.77-.36.19 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.83 2 .9 2.14.07.14.12.31.02.5-.1.19-.15.31-.29.48-.14.17-.3.37-.43.5-.14.14-.29.29-.13.57.17.29.75 1.24 1.61 2.01 1.11.99 2.04 1.3 2.33 1.44.29.14.46.12.63-.07.17-.19.72-.84.91-1.12.19-.29.38-.24.63-.14.26.1 1.65.78 1.93.92.29.14.48.22.55.34.07.13.07.72-.17 1.4z"/></svg>
+</a>
+
+<script src="js/script.js"></script>
+</body>
+</html>

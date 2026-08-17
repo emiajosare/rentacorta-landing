@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "installCommand": "echo 'sitio estatico, sin instalacion necesaria'",
+  "buildCommand": "echo 'sitio estatico, sin build necesario'",
+  "outputDirectory": "sitio-nuevo"
+}
